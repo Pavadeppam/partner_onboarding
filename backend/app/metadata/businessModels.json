@@ -1,0 +1,31 @@
+{
+  "businessModels": [
+    { "id": "franchise", "label": "Franchise", "description": "Independent partners operating under brand name" },
+    { "id": "wholesale", "label": "Wholesale", "description": "Bulk sales to retailers and distributors" },
+    { "id": "marketplace_consignment", "label": "Marketplace Consignment", "description": "Selling via marketplace with brand-owned stock" },
+    { "id": "marketplace_wholesale", "label": "Marketplace Wholesale", "description": "Marketplace buys and resells brand stock" }
+  ],
+  "businessUnits": [
+    { "id": "mens", "label": "Men's" },
+    { "id": "womens", "label": "Women's" },
+    { "id": "kids", "label": "Kids" },
+    { "id": "accessories", "label": "Accessories" }
+  ],
+  "categories": [
+    { "id": "apparel", "label": "Apparel" },
+    { "id": "footwear", "label": "Footwear" },
+    { "id": "bags", "label": "Bags" },
+    { "id": "jewelry", "label": "Jewelry" }
+  ],
+  "seasons": [
+    { "id": "ss26", "label": "Spring/Summer 2026" },
+    { "id": "fw26", "label": "Fall/Winter 2026" },
+    { "id": "core", "label": "Core" }
+  ],
+  "regions": [
+    { "id": "global", "label": "Global" },
+    { "id": "emea", "label": "EMEA" },
+    { "id": "apac", "label": "APAC" },
+    { "id": "na", "label": "North America" }
+  ]
+}

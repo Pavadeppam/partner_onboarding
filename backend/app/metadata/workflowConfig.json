@@ -1,0 +1,10 @@
+{
+  "workflowStages": [
+    { "id": "draft", "label": "Draft Created", "status": "draft" },
+    { "id": "mapping_generated", "label": "AI Mapping Generated", "status": "processing" },
+    { "id": "partner_review", "label": "Partner Review", "status": "pending_review" },
+    { "id": "business_approval", "label": "Business Approval Pending", "status": "pending_approval" },
+    { "id": "approved", "label": "Approved", "status": "completed" },
+    { "id": "activated", "label": "Configuration Activated", "status": "active" }
+  ]
+}

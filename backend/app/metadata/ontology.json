@@ -1,0 +1,188 @@
+{
+  "abbreviation_dictionary": {
+    "clr": "color",
+    "col": "color",
+    "cd": "code",
+    "tp": "type",
+    "typ": "type",
+    "desc": "description",
+    "desc_txt": "description text",
+    "nm": "name",
+    "sz": "size",
+    "fit": "fit",
+    "slv": "sleeve",
+    "slv_len": "sleeve length",
+    "collar": "collar",
+    "neck": "neck",
+    "fab": "fabric",
+    "comp": "composition",
+    "mat": "material",
+    "mtrl": "material",
+    "orig": "origin",
+    "cntry": "country",
+    "mfg": "manufacturer",
+    "pkg": "packaging",
+    "wt": "weight",
+    "dim": "dimension",
+    "img": "image",
+    "seo": "search engine optimization",
+    "kw": "keyword",
+    "msrp": "manufacturer suggested retail price",
+    "rrp": "recommended retail price",
+    "sku": "stock keeping unit",
+    "ean": "european article number",
+    "gtin": "global trade item number",
+    "upc": "universal product code",
+    "qty": "quantity",
+    "uom": "unit of measure",
+    "cust": "customs",
+    "pkg_wt": "package weight",
+    "ship": "shipping",
+    "sust": "sustainability",
+    "care": "care instruction",
+    "wash": "wash instruction",
+    "coo": "country of origin",
+    "pid": "product id",
+    "ccy": "currency code",
+    "mrp": "maximum retail price",
+    "mpn": "manufacturer part number"
+  },
+  "apparel_attribute_ontology": {
+    "COLOR": ["color", "shade", "tone", "hue", "clr", "colour", "color name", "colour name", "color code", "colour code"],
+    "FABRIC_COMPOSITION": ["fabric material", "cloth type", "material", "composition", "fabric composition", "fabric", "comp"],
+    "SIZE": ["size", "primary size", "garment size", "sz", "size range"],
+    "SIZE_GUIDE": ["size guide", "size chart", "measurement guide", "fit guide"],
+    "FIT_TYPE": ["fit", "fit type", "fitting"],
+    "SLEEVE_TYPE": ["sleeve", "sleeve style", "slv tp", "sleeve type", "slv"],
+    "COLLAR_TYPE": ["collar", "neck type", "collar tp", "neck"],
+    "CLOSURE_TYPE": ["closure", "zipper", "button type", "closure tp"],
+    "COUNTRY_OF_ORIGIN": ["origin country", "made in", "country of origin", "coo", "origin", "manufacturing country"]
+  },
+  "image_role_ontology": {
+    "HERO_IMAGE": ["main image", "primary image", "hero image"],
+    "FRONT_VIEW": ["front image", "front flatshot", "front view"],
+    "BACK_VIEW": ["back image", "back flatshot", "back view"],
+    "SIDE_VIEW": ["side image", "side view"],
+    "SWATCH": ["swatch", "fabric swatch", "color swatch", "colour swatch"],
+    "LIFESTYLE_IMAGE": ["model image", "lifestyle", "campaign image"]
+  },
+  "seo_attribute_ontology": {
+    "SEO_TITLE": ["seo title", "meta title", "page title"],
+    "SEO_KEYWORD": ["seo keyword", "search keyword", "seo kw", "keyword", "kw", "product keywords"],
+    "SEO_DESCRIPTION": ["meta description", "seo description", "seo meta description"]
+  },
+  "barcode_identifier_ontology": {
+    "BARCODE": ["barcode", "ean", "upc", "gtin", "ean13", "upca", "gtin14"],
+    "SKU": ["sku", "style code", "item code", "stock keeping unit", "product code"],
+    "STYLE_NUMBER": ["style number", "style no", "style id", "stroke number", "stroke no"]
+  },
+  "product_attribute_ontology": {
+    "CURRENCY": ["currency", "currency code", "ccy", "iso currency"],
+    "SEASON": ["season", "season name", "collection season"],
+    "GENDER": ["gender", "sex", "mens", "womens"],
+    "BRAND": ["brand", "label", "maker", "manufacturer", "mfg"],
+    "MPN": ["mpn", "manufacturer part number", "part number"],
+    "UOM": ["uom", "unit of measure", "unit", "quantity unit"]
+  },
+  "pricing_ontology": {
+    "RRP": ["rrp", "retail price", "recommended retail price"],
+    "MSRP": ["msrp", "suggested retail price", "manufacturer suggested retail price"],
+    "SALE_PRICE": ["sale price", "discount price"],
+    "COST_PRICE": ["cost", "buying price", "vendor cost"],
+    "MRP": ["mrp", "maximum retail price", "list price"]
+  },
+  "compliance_ontology": {
+    "CARE_INSTRUCTION": ["wash instruction", "care instruction", "care label", "wash", "care"],
+    "SAFETY_WARNING": ["warning", "safety note"],
+    "SUSTAINABILITY": ["eco score", "sustainability", "recycled content"],
+    "CUSTOMS": ["customs", "hsn", "tax code", "harmonized system"]
+  },
+  "apparel_category_taxonomy": {
+    "menswear": ["shirt", "tshirt", "jacket", "jeans", "trousers"],
+    "womenswear": ["dress", "top", "blouse", "skirt"],
+    "footwear": ["shoe", "sneaker", "boot", "sandal"],
+    "accessories": ["belt", "bag", "wallet"]
+  },
+  "size_normalization": {
+    "xs": "extra small",
+    "s": "small",
+    "m": "medium",
+    "l": "large",
+    "xl": "extra large",
+    "xxl": "double extra large"
+  },
+  "material_ontology": {
+    "cotton": ["100 cotton", "pure cotton"],
+    "polyester": ["poly", "poly blend"],
+    "linen": ["flax fabric"]
+  },
+  "marketplace_alias_ontology": {
+    "amazon": { "bullet_point": "marketing_feature", "main_image": "hero_image" },
+    "zalando": { "material": "fabric_composition" },
+    "flipkart": { "fabric": "fabric_composition" }
+  },
+  "domain_classification_list": {
+    "appearance": ["color", "pattern", "print"],
+    "material": ["fabric", "composition"],
+    "seo": ["meta", "keyword"],
+    "imagery": ["hero", "swatch", "front"],
+    "compliance": ["country", "warning", "care"]
+  },
+  "negative_mapping_rules": {
+    "COLOR": { "cannot_map_to": ["BARCODE", "BRAND"] },
+    "SIZE": { "cannot_map_to": ["SIZE_GUIDE"] },
+    "SEO": { "cannot_map_to": ["FABRIC_COMPOSITION", "BARCODE"] }
+  },
+  "stopwords": ["field", "attribute", "value", "desc", "data", "info", "detail"],
+  "attribute_type_definitions": {
+    "COLOR": "enum",
+    "BARCODE": "identifier",
+    "FABRIC_COMPOSITION": "text",
+    "COUNTRY_OF_ORIGIN": "lookup"
+  },
+  "class_normalization": {
+    "MRP": "PRICE",
+    "MSRP": "PRICE",
+    "RRP": "PRICE",
+    "SALE_PRICE": "PRICE",
+    "COST_PRICE": "PRICE",
+    "SEO_TITLE": "SEO",
+    "SEO_DESCRIPTION": "SEO",
+    "SEO_KEYWORD": "SEO",
+    "CUSTOMS": "HSN",
+    "CARE_INSTRUCTION": "CARE_INSTRUCTION"
+  },
+  "candidate_id_hints": {
+    "COLOR": ["colourDescription", "colourCode"],
+    "FABRIC_COMPOSITION": ["composition", "material", "materialStyle"],
+    "SIZE": ["primarySizeDesc", "primarySizeRange"],
+    "SIZE_GUIDE": ["sizeGuideAvailable"],
+    "FIT_TYPE": ["fit"],
+    "COUNTRY_OF_ORIGIN": ["countryOfOrigin", "coo"],
+    "BARCODE": ["barcode"],
+    "SKU": ["item", "productId", "productVariantId", "strokeNumber"],
+    "STYLE_NUMBER": ["strokeNumber", "strokeId"],
+    "SEO_TITLE": ["seoTitle"],
+    "SEO_DESCRIPTION": ["seoMetaDescription"],
+    "SEO_KEYWORD": ["productKeywords", "seoTags"],
+    "PRICE": ["price"],
+    "MRP": ["price"],
+    "MSRP": ["price"],
+    "RRP": ["price"],
+    "CURRENCY": ["currency"],
+    "SEASON": ["seasonName"],
+    "GENDER": ["gender"],
+    "BRAND": ["brand"],
+    "HSN": ["hsn"],
+    "MPN": ["manufacturerPartNumber"],
+    "UOM": ["uom"]
+  },
+  "sample_value_class_hints": {
+    "looks_like_country": { "class": "COUNTRY_OF_ORIGIN", "weight": 0.2 },
+    "looks_like_color": { "class": "COLOR", "weight": 0.12 },
+    "looks_like_size": { "class": "SIZE", "weight": 0.12 },
+    "looks_like_composition": { "class": "FABRIC_COMPOSITION", "weight": 0.12 },
+    "looks_like_barcode": { "class": "BARCODE", "weight": 0.18 },
+    "looks_like_hsn": { "class": "HSN", "weight": 0.12 }
+  }
+}

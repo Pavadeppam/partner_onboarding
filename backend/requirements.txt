@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+sentence-transformers
+transformers
+torch
+chromadb
+torchvision
+opencv-python
+pillow
+scikit-learn
+scipy
+numpy
+business-rules
+python-multipart

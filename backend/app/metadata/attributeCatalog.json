@@ -1,0 +1,79 @@
+[
+  {
+    "group": "Product Hierarchy",
+    "attributes": [
+      { "id": "level4", "label": "Merchandising Department", "type": "string", "mandatory": true, "category": "All", "description": "Merchandising level department.", "example": "Fashion Merchandising" },
+      { "id": "level5", "label": "Department", "type": "string", "mandatory": true, "category": "All", "description": "Specific retail department.", "example": "Mens Clothing" },
+      { "id": "level6", "label": "Category / Sub Department", "type": "string", "mandatory": true, "category": "All", "description": "Product sub-department or category.", "example": "Polos & T-Shirts" },
+      { "id": "level7", "label": "Super Group / Range", "type": "string", "mandatory": true, "category": "All", "description": "Super group or range classification.", "example": "Casual Tops" },
+      { "id": "level8", "label": "Product Group", "type": "string", "mandatory": true, "category": "All", "description": "Lowest level of hierarchy.", "example": "Textured Polo Shirts" }
+    ]
+  },
+  {
+    "group": "Product Core",
+    "attributes": [
+      { "id": "productId", "label": "Product ID", "type": "string", "mandatory": true, "category": "All", "description": "Internal unique product identifier.", "example": "MPOLO1001" },
+      { "id": "productType", "label": "Product Type", "type": "string", "mandatory": true, "category": "All", "description": "Type of product classification.", "example": "POLO_SHIRT" },
+      { "id": "strokeNumber", "label": "Stroke Number", "type": "string", "mandatory": true, "category": "All", "description": "Retailer specific stroke/style number.", "example": "T28/2265M" },
+      { "id": "strokeDescription", "label": "Stroke Description", "type": "string", "mandatory": true, "category": "All", "description": "Technical description of the stroke.", "example": "Mens Textured Jacquard Polo Shirt" },
+      { "id": "colourCode", "label": "Colour Code", "type": "string", "mandatory": true, "category": "All", "description": "Internal code for product color.", "example": "NVY" },
+      { "id": "colourDescription", "label": "Colour Description", "type": "string", "mandatory": true, "category": "All", "description": "Human-readable color name.", "example": "Navy" },
+      { "id": "primarySizeRange", "label": "Primary Size Range", "type": "string", "mandatory": true, "category": "All", "description": "Main size range.", "example": "S-XL" },
+      { "id": "secondarySizeRange", "label": "Secondary Size Range", "type": "string", "mandatory": false, "category": "All", "description": "Additional size descriptors.", "example": "Regular" },
+      { "id": "item", "label": "Item Code", "type": "string", "mandatory": true, "category": "All", "description": "Internal item reference.", "example": "MPO-1001" },
+      { "id": "manufacturerPartNumber", "label": "Manufacturer Part Number", "type": "string", "mandatory": false, "category": "All", "description": "Manufacturer part number (MPN).", "example": "MPN-12345" },
+      { "id": "uom", "label": "Unit of Measure", "type": "string", "mandatory": false, "category": "All", "description": "Unit of measure (UOM) for quantities.", "example": "EA" },
+      { "id": "merchandiseCategory", "label": "Merchandise Category", "type": "string", "mandatory": true, "category": "All", "description": "Merchandising classification code.", "example": "MENS_CASUAL_TOPS" },
+      { "id": "hsn", "label": "HSN Code", "type": "string", "mandatory": true, "category": "All", "description": "Tax classification code.", "example": "61051000" },
+      { "id": "modularityType", "label": "Modularity Type", "type": "string", "mandatory": false, "category": "All", "description": "Single or multi-component indicator.", "example": "Single" },
+      { "id": "knitWovenIndicator", "label": "Knit / Woven", "type": "string", "mandatory": true, "category": "Apparel", "description": "Fabric construction method.", "example": "Knit" },
+      { "id": "seasonName", "label": "Season Name", "type": "string", "mandatory": true, "category": "All", "description": "Name of the season.", "example": "SS26" },
+      { "id": "year", "label": "Year", "type": "string", "mandatory": true, "category": "All", "description": "Year of the season.", "example": "2026" },
+      { "id": "coo", "label": "Country of Origin (Core)", "type": "string", "mandatory": true, "category": "All", "description": "Country of origin from core data.", "example": "Bangladesh" },
+      { "id": "productStatus", "label": "Product Status", "type": "string", "mandatory": true, "category": "All", "description": "Current status of the product.", "example": "Live" },
+      { "id": "availablePhases", "label": "Available Phases", "type": "list", "mandatory": false, "category": "All", "description": "Phases when the product is available.", "example": "['PH1', 'PH2', 'PH3']" },
+      { "id": "productVariantId", "label": "Variant ID", "type": "string", "mandatory": true, "category": "All", "description": "Unique identifier for product variant.", "example": "MPOLO1001-S" },
+      { "id": "primarySizeDesc", "label": "Primary Size Desc", "type": "string", "mandatory": true, "category": "All", "description": "Description of primary size.", "example": "S" },
+      { "id": "secondarySizeDesc", "label": "Secondary Size Desc", "type": "string", "mandatory": false, "category": "All", "description": "Description of secondary size.", "example": "Regular" },
+      { "id": "barcode", "label": "Barcode", "type": "string", "mandatory": true, "category": "All", "description": "EAN/UPC barcode.", "example": "890123450101" },
+      { "id": "price", "label": "Price", "type": "number", "mandatory": true, "category": "All", "description": "Unit retail price.", "example": "39.99" },
+      { "id": "currency", "label": "Currency", "type": "string", "mandatory": true, "category": "All", "description": "ISO currency code.", "example": "GBP" }
+    ]
+  },
+  {
+    "group": "Selling Attributes",
+    "attributes": [
+      { "id": "gender", "label": "Gender", "type": "string", "mandatory": true, "category": "All", "description": "Target gender for the product.", "example": "Mens" },
+      { "id": "productTypeSelling", "label": "Product Type (Selling)", "type": "string", "mandatory": true, "category": "All", "description": "Selling classification of product.", "example": "Polo Shirt" },
+      { "id": "productDefinition", "label": "Product Definition", "type": "string", "mandatory": true, "category": "All", "description": "High-level product classification.", "example": "Casual Tops" },
+      { "id": "range", "label": "Range / Collection", "type": "string", "mandatory": true, "category": "All", "description": "Specific marketing collection.", "example": "Spring Summer Collection" },
+      { "id": "styleName", "label": "Style Name", "type": "string", "mandatory": true, "category": "All", "description": "Marketing name for the style.", "example": "Textured Jacquard Polo Shirt" },
+      { "id": "strokeId", "label": "Stroke ID", "type": "string", "mandatory": true, "category": "All", "description": "Marketing stroke identifier.", "example": "T28/2265M" },
+      { "id": "masterProductDescription", "label": "Master Product Description", "type": "string", "mandatory": true, "category": "All", "description": "Full marketing description.", "example": "Mens Cotton Rich Half Zip Polo Shirt" },
+      { "id": "brand", "label": "Brand", "type": "string", "mandatory": true, "category": "All", "description": "Commercial brand name.", "example": "Autograph" },
+      { "id": "collection", "label": "Collection Description", "type": "string", "mandatory": false, "category": "All", "description": "Marketing description for the collection.", "example": "easy-to-wear wardrobe staples..." },
+      { "id": "productDescriptionTitle", "label": "Product Description Title", "type": "string", "mandatory": false, "category": "All", "description": "Headline for product description.", "example": "PRODUCT DESCRIPTION" },
+      { "id": "description", "label": "Description", "type": "string", "mandatory": true, "category": "All", "description": "Detailed product copy.", "example": "With its bold textured jacquard weave..." },
+      { "id": "bulletPoints", "label": "Bullet Points", "type": "list", "mandatory": true, "category": "All", "description": "Key feature highlights.", "example": "['Textured jacquard weave', 'Added stretch']" },
+      { "id": "sectionTitleSizeFit", "label": "Size & Fit Section Title", "type": "string", "mandatory": false, "category": "All", "description": "Headline for size and fit section.", "example": "SIZE & FIT" },
+      { "id": "fit", "label": "Fit", "type": "string", "mandatory": true, "category": "All", "description": "Product fit descriptor.", "example": "Regular fit" },
+      { "id": "neckToHemLength", "label": "Neck to Hem Length", "type": "string", "mandatory": false, "category": "All", "description": "Vertical measurement.", "example": "NA" },
+      { "id": "sizeGuideAvailable", "label": "Size Guide Available", "type": "boolean", "mandatory": false, "category": "All", "description": "Indicator if size guide exists.", "example": "true" },
+      { "id": "trueToSize", "label": "True to Size", "type": "string", "mandatory": false, "category": "All", "description": "Sizing accuracy indicator.", "example": "Yes" },
+      { "id": "materialStyle", "label": "Material Style", "type": "string", "mandatory": true, "category": "All", "description": "Styling details of the material used.", "example": "Textured Jacquard" },
+      { "id": "composition", "label": "Composition", "type": "list", "mandatory": true, "category": "All", "description": "Percentage breakdown of materials.", "example": "['95% cotton', '5% elastane']" },
+      { "id": "material", "label": "Material", "type": "string", "mandatory": true, "category": "All", "description": "Primary material classification.", "example": "Cotton" },
+      { "id": "washInstruction", "label": "Wash Instruction", "type": "string", "mandatory": true, "category": "All", "description": "Main cleaning method.", "example": "Machine Wash" },
+      { "id": "manufacturerName", "label": "Manufacturer Name", "type": "string", "mandatory": true, "category": "All", "description": "Factory entity name.", "example": "Epyllion Knitwears Ltd." },
+      { "id": "manufacturerAddress", "label": "Manufacturer Address", "type": "string", "mandatory": true, "category": "All", "description": "Full factory location.", "example": "Madanpur, Bangladesh" },
+      { "id": "countryOfOrigin", "label": "Country of Origin", "type": "string", "mandatory": true, "category": "All", "description": "Manufacturing country.", "example": "Bangladesh" },
+      { "id": "genericType", "label": "Generic Type", "type": "string", "mandatory": true, "category": "All", "description": "Broad product category.", "example": "T-shirt" },
+      { "id": "seoTitle", "label": "Seo Title", "type": "string", "mandatory": true, "category": "All", "description": "Search optimized title.", "example": "Mens Cotton Rich Polo" },
+      { "id": "seoMetaDescription", "label": "Seo Meta Description", "type": "string", "mandatory": true, "category": "All", "description": "Search snippet description.", "example": "Mens textured jacquard polo..." },
+      { "id": "seoTags", "label": "Seo Tags", "type": "list", "mandatory": false, "category": "All", "description": "Internal SEO classification tags.", "example": "['Menswear', 'Polo Shirt']" },
+      { "id": "productKeywords", "label": "Product Keywords", "type": "list", "mandatory": false, "category": "All", "description": "Relevant search terms.", "example": "['mens polo', 'half zip']" },
+      { "id": "completeTheLook", "label": "Complete The Look", "type": "string", "mandatory": false, "category": "All", "description": "Cross-sell styling advice.", "example": "Style with slim fit chinos" },
+      { "id": "masterAspirationalText", "label": "Master Aspirational Text", "type": "string", "mandatory": false, "category": "All", "description": "High-level marketing slogan.", "example": "Modern comfort meets contemporary styling" }
+    ]
+  }
+]
