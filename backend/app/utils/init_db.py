@@ -1,3 +1,10 @@
+import sys
+from pathlib import Path
+
+backend_dir = Path(__file__).resolve().parents[2]
+if str(backend_dir) not in sys.path:
+    sys.path.insert(0, str(backend_dir))
+
 import json
 import os
 from app.ai.text_embedding_service import text_service
@@ -21,6 +28,7 @@ def init_vector_db():
             embedding = text_service.encode([f"{attr['label']} {attr.get('description', '')}"])[0]
             embeddings.append(embedding)
             metadatas.append({
+                "canonical_id": attr["id"],
                 "group": group["group"],
                 "type": attr["type"],
                 "mandatory": attr["mandatory"],

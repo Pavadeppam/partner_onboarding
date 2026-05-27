@@ -6,9 +6,6 @@ sentence-transformers
 transformers
 torch
 chromadb
-torchvision
-opencv-python
-pillow
 scikit-learn
 scipy
 numpy
