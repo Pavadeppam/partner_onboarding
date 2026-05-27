@@ -1,8 +1,27 @@
 from sentence_transformers import SentenceTransformer
 import torch
+import os
+from pathlib import Path
 
 class TextEmbeddingService:
     def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
+        backend_dir = Path(__file__).resolve().parents[2]
+        default_local_dir = backend_dir / "models" / "all-MiniLM-L6-v2-local"
+
+        model_path = os.getenv("SLM_MODEL_PATH")
+        if model_path:
+            p = Path(model_path).expanduser()
+            if not p.is_absolute():
+                p = (backend_dir / p).resolve()
+            if p.exists():
+                os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+                os.environ.setdefault("HF_HUB_OFFLINE", "1")
+                model_name = str(p)
+        elif default_local_dir.exists():
+            os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+            os.environ.setdefault("HF_HUB_OFFLINE", "1")
+            model_name = str(default_local_dir)
+
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.model = SentenceTransformer(model_name, device=self.device)
 

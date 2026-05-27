@@ -18,13 +18,19 @@ The backend handles AI inference, vector search (ChromaDB), and business rule va
 # Navigate to backend directory
 cd backend
 
+# (Recommended) Create and activate a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
 # Install dependencies
 python3 -m pip install -r requirements.txt
 
 # Initialize the Vector Database (one-time setup)
 # This generates embeddings for the canonical attribute catalog
-export PYTHONPATH=$PYTHONPATH:.
 python3 app/utils/init_db.py
+
+# (Optional) If the model is already cached on this machine, export it into the repo for offline use
+python3 app/utils/init_db.py --export-slm
 
 # Start the API server (Runs on http://localhost:8001)
 python3 app/main.py
