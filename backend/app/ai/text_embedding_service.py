@@ -2,11 +2,28 @@ from sentence_transformers import SentenceTransformer
 import torch
 import os
 from pathlib import Path
+import zipfile
 
 class TextEmbeddingService:
     def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
         backend_dir = Path(__file__).resolve().parents[2]
         default_local_dir = backend_dir / "models" / "all-MiniLM-L6-v2-local"
+        default_local_zip = backend_dir / "models" / "all-MiniLM-L6-v2-local.zip"
+
+        if not default_local_dir.exists() and default_local_zip.exists():
+            extract_to = default_local_dir
+            extract_to.parent.mkdir(parents=True, exist_ok=True)
+            with zipfile.ZipFile(default_local_zip, "r") as zf:
+                for info in zf.infolist():
+                    name = info.filename
+                    if not name or name.endswith("/"):
+                        continue
+                    dest = (extract_to / name).resolve()
+                    if extract_to not in dest.parents and dest != extract_to:
+                        raise RuntimeError(f"Unsafe path in model zip: {name}")
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    with zf.open(info, "r") as src, open(dest, "wb") as out:
+                        out.write(src.read())
 
         model_path = os.getenv("SLM_MODEL_PATH")
         if model_path:
